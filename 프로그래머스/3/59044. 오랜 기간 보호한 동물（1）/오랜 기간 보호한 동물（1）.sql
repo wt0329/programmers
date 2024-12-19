@@ -1,0 +1,16 @@
+-- 코드를 입력하세요
+SELECT T1.NAME
+     , T1.DATETIME
+  FROM ANIMAL_INS T1
+  LEFT OUTER JOIN ANIMAL_OUTS T2 ON (T1.ANIMAL_ID = T2.ANIMAL_ID) 
+ WHERE T2.DATETIME IS NULL 
+ GROUP BY T1.NAME 
+ ORDER BY DATETIME ASC
+ LIMIT 3;
+ 
+ /*
+  - LEFT OUTER JOIN으로 입양을 가지 못한 동물을 찾아냄
+  - DATETIME IS NULL 조건으로 입양 가지 못한 애들 출력
+  - 오름차순으로 정렬 후 3명만 출력
+ */
+ 
